@@ -112,4 +112,43 @@ h2 {
 .logo {
   height: 80px;
   width: 80px;
+}
+
+.navBar {
+  position: fixed;
+  flex-direction: column;
+  width: 100%;
+  z-index: 1000;
+}
+.navBar .navBarOne, .navBar .navBarTwo {
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+}
+.navBar .navBarOne {
+  background-color: var(--SecondaryColor);
+}
+.navBar .navBarOne .icon:hover {
+  color: var(--PrimaryColor);
+}
+.navBar .navBarOne .atb {
+  gap: 1rem;
+}
+.navBar .navBarOne .atb span {
+  color: var(--blackColor);
+  font-size: 13px;
+  cursor: pointer;
+}
+.navBar .navBarOne .atb span:hover {
+  color: var(--PrimaryColor);
+  font-weight: 700;
+}
+.navBar .navBarTwo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 3rem;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  transition: 0.3s ease-in-out;
 }/*# sourceMappingURL=main.css.map */

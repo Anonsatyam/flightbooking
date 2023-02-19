@@ -116,3 +116,50 @@ h2{
     height: 80px;
     width: 80px;
 }
+
+//navbar code
+.navBar{
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1000;
+
+    .navBarOne, .navBarTwo{
+        justify-content: space-between;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .navBarOne{
+        background-color: var(--SecondaryColor);
+
+        .icon:hover{
+            color: var(--PrimaryColor);
+        }
+
+        .atb{
+            gap: 1rem;
+
+            span{
+                color: var(--blackColor);
+                font-size: 13px;
+                cursor: pointer;
+
+                &:hover{
+                    color: var(--PrimaryColor);
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    .navBarTwo{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 3rem;
+        padding: 1.5rem 1rem;
+        position: fixed;
+        transition: 0.3s ease-in-out;
+    }
+}
