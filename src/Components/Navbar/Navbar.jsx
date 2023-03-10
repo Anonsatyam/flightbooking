@@ -6,22 +6,32 @@ import { CgMenuGridO } from "react-icons/cg";
 
 import logo from "../../assets/logo.png";
 
-
 function Navbar() {
-  
-  const [active, setActive] = useState('navBarMenu');
+  const [active, setActive] = useState("navBarMenu");
 
   const showNavbar = () => {
-    setActive('navBarMenu showNavBar')
-  }
+    setActive("navBarMenu showNavBar");
+  };
 
   const removeNavBar = () => {
-    setActive('navBarMenu')
-  }
-  
+    setActive("navBarMenu");
+  };
+
+  //Adding a background color to the second Navbar
+  const [noBg, addBg] = useState("navBarTwo");
+
+  const addBgColor = () => {
+    if (window.scrollY >= 10) {
+      addBg("navBarTwo navbarWithBg");
+    } else {
+      addBg("navBarTwo");
+    }
+  };
+
+  window.addEventListener('scroll', addBgColor);
+
   return (
     <div className="navBar flex">
-
       <div className="navBarOne flex">
         <div>
           <SiConsul className="icon" />
@@ -42,20 +52,32 @@ function Navbar() {
         </div>
       </div>
 
-      <div className="navBarTwo">
+      <div className={noBg}>
         <div className="logoDiv">
           <img src={logo} alt="logo" className="logo" />
         </div>
 
         <div className={active}>
           <ul className="menu flex">
-            <li onClick={removeNavBar} className="listItem">Home</li>
-            <li onClick={removeNavBar} className="listItem">About</li>
-            <li onClick={removeNavBar} className="listItem">Offers</li>
-            <li onClick={removeNavBar} className="listItem">Seats</li>
-            <li onClick={removeNavBar} className="listItem">Destinations</li>
+            <li onClick={removeNavBar} className="listItem">
+              Home
+            </li>
+            <li onClick={removeNavBar} className="listItem">
+              About
+            </li>
+            <li onClick={removeNavBar} className="listItem">
+              Offers
+            </li>
+            <li onClick={removeNavBar} className="listItem">
+              Seats
+            </li>
+            <li onClick={removeNavBar} className="listItem">
+              Destinations
+            </li>
           </ul>
-          <button onClick={removeNavBar} className="btn flex btnOne">Contact</button>
+          <button onClick={removeNavBar} className="btn flex btnOne">
+            Contact
+          </button>
         </div>
 
         <button className="btn flex btnTwo">Contact</button>
@@ -66,6 +88,6 @@ function Navbar() {
       </div>
     </div>
   );
-};
+}
 
 export default Navbar;
